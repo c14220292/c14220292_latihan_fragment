@@ -1,10 +1,14 @@
 package nit2x.paba.c14220292_latihan_fragment
 
+import android.content.Context
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,13 +21,48 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val mFragmentManager = supportFragmentManager
-        val mfSatu = fSatu()
+        setSupportActionBar(findViewById(R.id.toolbar))
 
-        mFragmentManager.findFragmentByTag(fSatu::class.java.simpleName)
-        mFragmentManager
-            .beginTransaction()
-            .add(R.id.frameContainer, mfSatu, fSatu::class.java.simpleName)
+        if (savedInstanceState == null) {
+            val fragmentDefault = fSatu()
+            val inputBaru = getSharedPreferences("PengaturanGame", Context.MODE_PRIVATE)
+            val batasAwal = inputBaru.getInt("batasAwal", 1)
+            val bundle = Bundle()
+            bundle.putInt("batasAwal", batasAwal)
+            fragmentDefault.arguments = bundle
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragmentDefault)
+                .commit()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_top, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menuHal1 -> openFragment(fSatu())
+            R.id.menuHal2 -> openFragment(fDua())
+            R.id.menuHal3 -> openFragment(fTiga())
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        if (fragment is fSatu) {
+            val inputBaru = getSharedPreferences("PengaturanGame", Context.MODE_PRIVATE)
+            val batasAwal = inputBaru.getInt("batasAwal", 1)
+            val bundle = Bundle()
+            bundle.putInt("batasAwal", batasAwal)
+            fragment.arguments = bundle
+        }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }

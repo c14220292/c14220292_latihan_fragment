@@ -6,30 +6,6 @@
     android:orientation="vertical"
     tools:context=".fSatu">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Halaman 1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Halaman 2" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Halaman 3" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/tvModal"
         android:gravity="center"
@@ -41,14 +17,12 @@
         android:textStyle="bold" />
 
     <GridLayout
-        android:id="@+id/gridGame"
+        android:id="@+id/gridAngka"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="5"
-        android:rowCount="2"
-        android:layout_margin="8dp"
-        android:background="@drawable/card_rounded"
-        android:layout_gravity="center" />
+        android:columnCount="2"
+        android:rowCount="5"
+        android:layout_margin="8dp" />
 
     <Button
         android:id="@+id/btnNyerah"

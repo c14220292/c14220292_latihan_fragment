@@ -1,10 +1,13 @@
 package nit2x.paba.c14220292_latihan_fragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,8 @@ class fTiga : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var _etBatasAwal: EditText
+    private lateinit var _btnSimpan: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +38,24 @@ class fTiga : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_f_tiga, container, false)
+        val view = inflater.inflate(R.layout.fragment_f_tiga, container, false)
+
+        _etBatasAwal = view.findViewById(R.id.etBatasAwal)
+        _btnSimpan = view.findViewById(R.id.btnSimpan)
+
+        val inputBaru = requireContext().getSharedPreferences("PengaturanGame", Context.MODE_PRIVATE)
+        val batasAwal = inputBaru.getInt("batasAwal", 1)
+        _etBatasAwal.setText(batasAwal.toString())
+
+        _btnSimpan.setOnClickListener {
+            val batasAwalBaru = _etBatasAwal.text.toString().toIntOrNull()
+
+            if (batasAwalBaru != null) {
+                inputBaru.edit().putInt("batasAwal", batasAwalBaru).apply()
+            }
+        }
+
+        return view
     }
 
     companion object {
