@@ -30,170 +30,30 @@
             android:text="Halaman 3" />
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvModal"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:gravity="center">
+        android:text="Modal Awal: 50"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Modal Awal: "
-            android:textSize="32sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/tvModal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="50"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <TableLayout
+    <GridLayout
+        android:id="@+id/gridGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/card_rounded"
-                android:gravity="center"
-                android:text="\?"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-        </TableRow>
-    </TableLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:columnCount="5"
+        android:rowCount="2"
         android:layout_margin="8dp"
         android:background="@drawable/card_rounded"
-        android:gravity="center"
-        android:text="Give up?"
-        android:textStyle="bold"
-        android:textColor="@color/white" />
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/btnNyerah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Give up?" />
 </LinearLayout>
